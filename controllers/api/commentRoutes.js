@@ -1,2 +1,2 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Comment } = require('../../models');
