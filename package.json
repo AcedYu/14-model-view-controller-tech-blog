@@ -1,0 +1,30 @@
+{
+  "name": "14-model-view-controller-tech-blog",
+  "version": "1.0.0",
+  "description": "This assignment was assigned by the U.C. Berkeley Extension Full-time Full Stack Flex Boot Camp. This is assigment 14 for the program. In this assignment I was tasked to create a CMS-style blog website. Developerse can publish their blog posts and comment on other developers' posts as well. This program is deployed on Heroku and will follow the MVC paradigm in its architectural structure. It uses Handlebars.js as the templating langauge, Sequelize as the ORM, and the express-session npm package for authentication.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AcedYu/14-model-view-controller-tech-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AcedYu/14-model-view-controller-tech-blog/issues"
+  },
+  "homepage": "https://github.com/AcedYu/14-model-view-controller-tech-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
