@@ -1,0 +1,16 @@
+<div class="container">
+  {{#each blogs}}
+  <div class="row mx-auto mb-3">
+    <div class="card col-12">
+      <div class="card-header bg-primary text-white">
+        <h1 class="username card-title" userid="{{user.id}}" id="username">@{{user.name}}</h1>
+      </div>
+      <div class="card-body">
+        <p class="message card-text">{{content}}</p>
+        <p class="timestamp card-text">Posted at: {{format_date timestamp}}</p>
+        <a href="/post/{{id}}" class="card-link comment">View Comments</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

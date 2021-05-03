@@ -7,6 +7,16 @@ router.get('/', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findAll({
       order: [['timestamp','DESC']],
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'id'],
+        },
+        {
+          model: Comment,
+          attributes: ['content'],
+        }
+      ],
     });
 
     const blogs = blogData.map(post => post.get({ plain: true }));
@@ -36,7 +46,17 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userBlogData = await Blog.findAll({
       where: {
         user_id: req.session.user_id,
-      }
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'id'],
+        },
+        {
+          model: Comment,
+          attributes: ['content'],
+        }
+      ],
     });
     var userBlogs = [];
     if (!userBlogData) {
@@ -50,7 +70,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       userBlogs,
       logged_in: req.session.logged_in,
     })
-  } catch {
+  } catch (err){
     res.status(400).json(err);
   }
 });
@@ -61,14 +81,29 @@ router.get('/post/:id', withAuth, async (req, res) => {
     const blogData = await Blog.findOne({
       where: {
         id: req.params.id,
-      }
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'id'],
+        },
+        {
+          model: Comment,
+          attributes: ['content'],
+          include: {
+            model: User,
+            attributes:['name'],
+            order: [['id', 'ASC']],
+          },
+        }
+      ],
     });
     const blogPost = blogData.get({plain: true});
     res.render('post', {
       blogPost,
       logged_in: req.session.logged_in,
     });
-  } catch {
+  } catch (err){
     res.status(400).json(err);
   }
 });

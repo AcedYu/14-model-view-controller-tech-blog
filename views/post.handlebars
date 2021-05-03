@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row mx-auto mb-3">
+    <div class="card col-12">
+      <div class="card-header bg-primary text-white">
+        <h1 class="username card-title" userid="{{blogPost.user.id}}" id="username">@{{blogPost.user.name}}</h1>
+      </div>
+      <div class="card-body">
+        <p class="message card-text">{{blogPost.content}}</p>
+        <p class="timestamp card-text">Posted at: {{format_date blogPost.timestamp}}</p>
+        <div>
+          {{#if (is_empty blogPost.comments)}}
+          <div class="card text-dark bg-light mb-1">
+            <div class="card-body">
+              <p class="card-text">This post currently has no comments</p>
+            </div>
+          </div>
+          {{/if}}
+          {{#each blogPost.comments}}
+          <div class="card text-dark bg-light mb-1">
+            <div class="card-header">{{user.name}}</div>
+            <div class="card-body">
+              <p class="card-text">{{content}}</p>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mx-auto mb-3">
+    <div class="container border mb-3">
+      <h1>Add a Comment</h1>
+      <div class="mb-3">
+        <textarea class="form-control mb-2" id="comment" rows="4" placeholder="Comment"></textarea>
+        <button type="button" class="btn btn-primary" id="comment-btn">Comment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./js/post.js"></script>
