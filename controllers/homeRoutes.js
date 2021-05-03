@@ -44,6 +44,7 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userBlogData = await Blog.findAll({
+      order: [['timestamp','DESC']],
       where: {
         user_id: req.session.user_id,
       },
