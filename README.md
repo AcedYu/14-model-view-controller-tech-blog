@@ -26,6 +26,8 @@ It includes notable features such as:
   - users and credentials
   - blog posts and details
 
+![Image](demo.png)
+
 Due: Monday, May 3, 2021 11:59 PM
 
 ## Getting Started
