@@ -2,7 +2,7 @@
   "name": "14-model-view-controller-tech-blog",
   "version": "1.0.0",
   "description": "This assignment was assigned by the U.C. Berkeley Extension Full-time Full Stack Flex Boot Camp. This is assigment 14 for the program. In this assignment I was tasked to create a CMS-style blog website. Developerse can publish their blog posts and comment on other developers' posts as well. This program is deployed on Heroku and will follow the MVC paradigm in its architectural structure. It uses Handlebars.js as the templating langauge, Sequelize as the ORM, and the express-session npm package for authentication.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",

@@ -64,7 +64,7 @@ npm start
 
 ## Deployed Link
 
-* [See Live Site](ADD HEROKU APP URL HERE)
+* [See Live Site](https://fierce-atoll-80350.herokuapp.com/)
 
 ## Authors
 AcedYu
